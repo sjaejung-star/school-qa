@@ -166,7 +166,7 @@ footer { color: var(--muted); font-size: 12.5px; padding: 0 0 32px; }
     document.title = `${x.title} | 학교회계 질의회신`;
     $("detail").innerHTML = `
       <a class="btn back" href="#">← 목록</a>
-      <div class="sub"><span>${esc(x.id)}</span><span>${esc(x.date)}</span><span>${esc(x.org || "")}</span>${statusTag(x.status)}</div>
+      <div class="sub"><span>${esc(x.id)}</span><span>${esc(x.date)}</span>${x.revised ? `<span>재검토 ${esc(x.revised)}</span>` : ""}<span>${esc(x.org || "")}</span>${statusTag(x.status)}</div>
       <h2>${esc(x.title)}</h2>
       <div class="sub">${(x.tags || []).map((t) => `<span class="tag">#${esc(t)}</span>`).join("")}</div>
       <div class="conclusion"><b>결론</b>${esc(x.conclusion)}</div>
